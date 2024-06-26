@@ -1,7 +1,7 @@
 import { Rider } from './rider';
 import { Driver } from './driver';
 import { Location } from './location';
-import { TripMetaData } from './tripMetadata';
+import { TripMetaData } from './tripMetaData';
 
 export class Trip {
     constructor(
