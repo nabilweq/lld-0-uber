@@ -17,12 +17,12 @@ export class Uber {
         private strategyMgr: StrategyMgr
     ) {}
 
-    bookTrip(rider: Rider, startLocation: Location, endLocation: Location): Trip | null {
+    bookTrip(rider: Rider, startLocation: Location, endLocation: Location): Trip | string {
         const availableDrivers = this.driverMgr.getDrivers().filter(driver => driver.status === Status.IDLE);
         const matchedDriver = this.strategyMgr.driverMatchingStrategy.findDriver(availableDrivers, startLocation);
 
         if (!matchedDriver) {
-            return null;
+            return 'Our Drivers are busy right now, please check after some times';
         }
 
         const fare = this.strategyMgr.pricingStrategy.calculatePrice(

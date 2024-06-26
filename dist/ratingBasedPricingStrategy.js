@@ -9,7 +9,6 @@ class RatingBasedPricingStrategy {
         return baseFare + pricePerMile * distance - trip.driver.rating;
     }
     calculateDistance(start, end) {
-        // Simple placeholder calculation
         return Math.sqrt(Math.pow(start.latitude - end.latitude, 2) + Math.pow(start.longitude - end.longitude, 2));
     }
 }

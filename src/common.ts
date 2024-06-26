@@ -1,5 +1,5 @@
 export enum Status {
-    IDLE,
-    BOOKED,
-    ON_TRIP
+    IDLE=0,
+    BOOKED=1,
+    ON_TRIP=2
 }

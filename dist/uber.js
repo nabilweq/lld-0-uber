@@ -15,7 +15,7 @@ class Uber {
         const availableDrivers = this.driverMgr.getDrivers().filter(driver => driver.status === common_1.Status.IDLE);
         const matchedDriver = this.strategyMgr.driverMatchingStrategy.findDriver(availableDrivers, startLocation);
         if (!matchedDriver) {
-            return null;
+            return 'Our Drivers are busy right now, please check after some times';
         }
         const fare = this.strategyMgr.pricingStrategy.calculatePrice(new trip_1.Trip(0, rider, matchedDriver, startLocation, endLocation, new tripMetaData_1.TripMetaData(startLocation, endLocation, 0)));
         const tripMetaData = new tripMetaData_1.TripMetaData(startLocation, endLocation, fare);
