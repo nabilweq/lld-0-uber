@@ -1,4 +1,3 @@
-// src/index.ts
 import { Driver } from './driver';
 import { Rider } from './rider';
 import { Location } from './location';
@@ -9,6 +8,7 @@ import { StrategyMgr } from './strategyMgr';
 import { DefaultPricingStrategy } from './defaultPricingStrategy';
 import { LeastTimeBasedMatchingStrategy } from './leastTimeBasedMatchingStrategy';
 import { Uber } from './uber';
+import { Trip } from './trip';
 
 const driverMgr = new DriverMgr();
 const riderMgr = new RiderMgr();
@@ -24,8 +24,9 @@ const startLocation = new Location(37.7749, -122.4194);
 const endLocation = new Location(34.0522, -118.2437);
 
 driverMgr.addDriver(driver);
+
 riderMgr.addRider(rider);
 
-const trip = uber.bookTrip(rider, startLocation, endLocation);
+const trip:Trip | string = uber.bookTrip(rider, startLocation, endLocation);
 
 console.log(trip);

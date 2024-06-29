@@ -13,7 +13,6 @@ class Uber {
     }
     bookTrip(rider, startLocation, endLocation) {
         const availableDrivers = this.driverMgr.getDrivers().filter(driver => driver.status === common_1.Status.IDLE);
-        console.log(availableDrivers);
         const matchedDriver = this.strategyMgr.driverMatchingStrategy.findDriver(availableDrivers, startLocation);
         if (!matchedDriver) {
             return 'Our Drivers are busy right now, please check after some times';

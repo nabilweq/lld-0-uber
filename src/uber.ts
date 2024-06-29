@@ -1,4 +1,3 @@
-// src/uber.ts
 import { DriverMgr } from './driverMgr';
 import { RiderMgr } from './riderMgr';
 import { TripMgr } from './tripMgr';
@@ -19,8 +18,9 @@ export class Uber {
 
     bookTrip(rider: Rider, startLocation: Location, endLocation: Location): Trip | string {
         const availableDrivers = this.driverMgr.getDrivers().filter(driver => driver.status === Status.IDLE);
+        
         const matchedDriver = this.strategyMgr.driverMatchingStrategy.findDriver(availableDrivers, startLocation);
-
+        
         if (!matchedDriver) {
             return 'Our Drivers are busy right now, please check after some times';
         }
@@ -40,8 +40,9 @@ export class Uber {
         );
 
         this.tripMgr.addTrip(trip);
-        matchedDriver.status = Status.BOOKED;
 
+        matchedDriver.status = Status.BOOKED;
+        
         return trip;
     }
 }
