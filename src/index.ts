@@ -18,18 +18,14 @@ const driverMatchingStrategy = new LeastTimeBasedMatchingStrategy();
 const strategyMgr = new StrategyMgr(pricingStrategy, driverMatchingStrategy);
 const uber = new Uber(driverMgr, riderMgr, tripMgr, strategyMgr);
 
-const driver1 = new Driver(1, 'John Doe', 4.9);
-const driver2 = new Driver(2, 'Karim Set', 3.4);
+const driver = new Driver(1, 'John Doe', 4.9);
 const rider = new Rider(4, 'Jane Doe');
 const startLocation = new Location(37.7749, -122.4194);
 const endLocation = new Location(34.0522, -118.2437);
 
-driverMgr.addDriver(driver2);
-driverMgr.addDriver(driver1);
+driverMgr.addDriver(driver);
 
 riderMgr.addRider(rider);
 
-const trip1:Trip | string = uber.bookTrip(rider, startLocation, endLocation);
-const trip2:Trip | string = uber.bookTrip(rider, startLocation, endLocation);
-const trip3:Trip | string = uber.bookTrip(rider, startLocation, endLocation);
-console.log(trip1, trip2, trip3);
+const trip:Trip | string = uber.bookTrip(rider, startLocation, endLocation);
+console.log(trip);
