@@ -7,7 +7,8 @@ This is my attempt with Typescript for the Uber/Ola LLD Tutorial of [Keerti Pura
 
 ## Demo with React App
 
-I hosted it on Netlify, you can try it here: [https://lld-demo-uber.app](https://lld-demo-uber.netlify.app)
+I hosted it on Netlify, you can try it here: [https://lld-demo-uber.app](https://lld-demo-uber.netlify.app) <br>
+Repo: https://github.com/nabilweq/lld-demo1
 
 
 ## Tutorial
