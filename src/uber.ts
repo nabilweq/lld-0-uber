@@ -41,7 +41,7 @@ export class Uber {
 
         this.tripMgr.addTrip(trip);
 
-        matchedDriver.status = Status.BOOKED;
+        this.driverMgr.updateDriverStatus(matchedDriver.id, Status.BOOKED);
         
         return trip;
     }

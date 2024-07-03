@@ -21,7 +21,7 @@ class Uber {
         const tripMetaData = new tripMetaData_1.TripMetaData(startLocation, endLocation, fare);
         const trip = new trip_1.Trip(this.tripMgr.getTrips().length + 1, rider, matchedDriver, startLocation, endLocation, tripMetaData);
         this.tripMgr.addTrip(trip);
-        matchedDriver.status = common_1.Status.BOOKED;
+        this.driverMgr.updateDriverStatus(matchedDriver.id, common_1.Status.BOOKED);
         return trip;
     }
 }

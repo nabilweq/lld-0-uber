@@ -11,5 +11,11 @@ class DriverMgr {
     getDrivers() {
         return this.drivers;
     }
+    updateDriverStatus(driverId, status) {
+        const driver = this.drivers.find(d => d.id === driverId);
+        if (driver) {
+            driver.status = status;
+        }
+    }
 }
 exports.DriverMgr = DriverMgr;
