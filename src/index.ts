@@ -28,5 +28,4 @@ driverMgr.addDriver(driver);
 riderMgr.addRider(rider);
 
 const trip:Trip | string = uber.bookTrip(rider, startLocation, endLocation);
-
 console.log(trip);
